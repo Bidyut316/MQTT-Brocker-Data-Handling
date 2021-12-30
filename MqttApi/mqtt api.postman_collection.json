@@ -1,0 +1,219 @@
+{
+	"info": {
+		"_postman_id": "53ba589f-d589-47ae-8e40-660f3a23755e",
+		"name": "mqtt api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "jar status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": [
+				{
+					"name": "jar status",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3200/jar/status",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3200",
+							"path": [
+								"jar",
+								"status"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "129"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"81-NhEDZD1ffYdx75fveHDT/0Kq0Qo\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 Dec 2021 05:12:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"mac_id\": \"1co0n921t9663b567a94da194a4ae1e5\",\n        \"status\": \"ofline\"\n    },\n    {\n        \"mac_id\": \"1co0n921t9663b567a94da254a4ae1e7\",\n        \"status\": \"ofline\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "current jar data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": [
+				{
+					"name": "current jar data",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3200/jar/latest-data/1co0n921t9663b567a94da254a4ae1e7",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3200",
+							"path": [
+								"jar",
+								"latest-data",
+								"1co0n921t9663b567a94da254a4ae1e7"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "285"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"11d-gPvkvUlw3wPbu8efxEJNCvg6Zmg\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 Dec 2021 06:11:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 32,\n        \"node_mac_id\": \"1co0n921t9663b567a94da254a4ae1e7\",\n        \"hub_mac_id\": \"7ed0h921u9663b567a94da194a4ae1e5\",\n        \"ble_rssi_val\": -66,\n        \"Vacancy_in_gms\": 103,\n        \"Vacancy_in_per\": 23,\n        \"date_time\": \"2021-12-30T06:09:07.000Z\",\n        \"createdAt\": \"2021-12-30T06:09:07.693Z\",\n        \"updatedAt\": \"2021-12-30T06:09:07.693Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Jar Historic Data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": [
+				{
+					"name": "Jar Historic Data",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"node_mac_id\": \"1co0n921t9663b567a94da194a4ae1e5\",\r\n    \"from_date\":\"2021-12-29 00:00\",\r\n    \"to_date\":\"2021-12-30 23:59\"\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3200/historic-data",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3200",
+							"path": [
+								"historic-data"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "3691"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e6b-flyw4ZU0hgRXnqJTWPRk9q+wn6c\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 Dec 2021 06:13:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 7,\n        \"node_mac_id\": \"1co0n921t9663b567a94da194a4ae1e5\",\n        \"hub_mac_id\": \"7ed0h921u9663b567a94da194a4ae1e5\",\n        \"ble_rssi_val\": -60,\n        \"Vacancy_in_gms\": 103,\n        \"Vacancy_in_per\": 23,\n        \"date_time\": \"2021-12-28T19:26:06.000Z\",\n        \"createdAt\": \"2021-12-28T19:28:42.461Z\",\n        \"updatedAt\": \"2021-12-28T19:28:42.461Z\"\n    },\n    {\n        \"id\": 9,\n        \"node_mac_id\": \"1co0n921t9663b567a94da194a4ae1e5\",\n        \"hub_mac_id\": \"7ed0h921u9663b567a94da194a4ae1e5\",\n        \"ble_rssi_val\": -65,\n        \"Vacancy_in_gms\": 103,\n        \"Vacancy_in_per\": 23,\n        \"date_time\": \"2021-12-28T19:26:17.000Z\",\n        \"createdAt\": \"2021-12-28T19:28:42.486Z\",\n        \"updatedAt\": \"2021-12-28T19:28:42.486Z\"\n    },\n    {\n        \"id\": 11,\n        \"node_mac_id\": \"1co0n921t9663b567a94da194a4ae1e5\",\n        \"hub_mac_id\": \"7ed0h921u9663b567a94da194a4ae1e5\",\n        \"ble_rssi_val\": -52,\n        \"Vacancy_in_gms\": 103,\n        \"Vacancy_in_per\": 23,\n        \"date_time\": \"2021-12-28T19:26:36.000Z\",\n        \"createdAt\": \"2021-12-28T19:28:42.490Z\",\n        \"updatedAt\": \"2021-12-28T19:28:42.490Z\"\n    },\n    {\n        \"id\": 13,\n        \"node_mac_id\": \"1co0n921t9663b567a94da194a4ae1e5\",\n        \"hub_mac_id\": \"7ed0h921u9663b567a94da194a4ae1e5\",\n        \"ble_rssi_val\": -60,\n        \"Vacancy_in_gms\": 103,\n        \"Vacancy_in_per\": 23,\n        \"date_time\": \"2021-12-28T19:26:47.000Z\",\n        \"createdAt\": \"2021-12-28T19:28:42.499Z\",\n        \"updatedAt\": \"2021-12-28T19:28:42.499Z\"\n    },\n    {\n        \"id\": 15,\n        \"node_mac_id\": \"1co0n921t9663b567a94da194a4ae1e5\",\n        \"hub_mac_id\": \"7ed0h921u9663b567a94da194a4ae1e5\",\n        \"ble_rssi_val\": -70,\n        \"Vacancy_in_gms\": 103,\n        \"Vacancy_in_per\": 23,\n        \"date_time\": \"2021-12-28T19:27:06.000Z\",\n        \"createdAt\": \"2021-12-28T19:28:42.503Z\",\n        \"updatedAt\": \"2021-12-28T19:28:42.503Z\"\n    },\n    {\n        \"id\": 17,\n        \"node_mac_id\": \"1co0n921t9663b567a94da194a4ae1e5\",\n        \"hub_mac_id\": \"7ed0h921u9663b567a94da194a4ae1e5\",\n        \"ble_rssi_val\": -62,\n        \"Vacancy_in_gms\": 103,\n        \"Vacancy_in_per\": 23,\n        \"date_time\": \"2021-12-28T19:27:17.000Z\",\n        \"createdAt\": \"2021-12-28T19:28:42.507Z\",\n        \"updatedAt\": \"2021-12-28T19:28:42.507Z\"\n    },\n    {\n        \"id\": 19,\n        \"node_mac_id\": \"1co0n921t9663b567a94da194a4ae1e5\",\n        \"hub_mac_id\": \"7ed0h921u9663b567a94da194a4ae1e5\",\n        \"ble_rssi_val\": -52,\n        \"Vacancy_in_gms\": 103,\n        \"Vacancy_in_per\": 23,\n        \"date_time\": \"2021-12-29T18:02:48.000Z\",\n        \"createdAt\": \"2021-12-29T18:02:48.154Z\",\n        \"updatedAt\": \"2021-12-29T18:02:48.154Z\"\n    },\n    {\n        \"id\": 21,\n        \"node_mac_id\": \"1co0n921t9663b567a94da194a4ae1e5\",\n        \"hub_mac_id\": \"7ed0h921u9663b567a94da194a4ae1e5\",\n        \"ble_rssi_val\": -57,\n        \"Vacancy_in_gms\": 103,\n        \"Vacancy_in_per\": 23,\n        \"date_time\": \"2021-12-29T19:18:48.000Z\",\n        \"createdAt\": \"2021-12-29T19:18:48.091Z\",\n        \"updatedAt\": \"2021-12-29T19:18:48.091Z\"\n    },\n    {\n        \"id\": 23,\n        \"node_mac_id\": \"1co0n921t9663b567a94da194a4ae1e5\",\n        \"hub_mac_id\": \"7ed0h921u9663b567a94da194a4ae1e5\",\n        \"ble_rssi_val\": -61,\n        \"Vacancy_in_gms\": 103,\n        \"Vacancy_in_per\": 23,\n        \"date_time\": \"2021-12-30T04:42:37.000Z\",\n        \"createdAt\": \"2021-12-30T04:42:37.468Z\",\n        \"updatedAt\": \"2021-12-30T04:42:37.468Z\"\n    },\n    {\n        \"id\": 25,\n        \"node_mac_id\": \"1co0n921t9663b567a94da194a4ae1e5\",\n        \"hub_mac_id\": \"7ed0h921u9663b567a94da194a4ae1e5\",\n        \"ble_rssi_val\": -51,\n        \"Vacancy_in_gms\": 103,\n        \"Vacancy_in_per\": 23,\n        \"date_time\": \"2021-12-30T06:08:18.000Z\",\n        \"createdAt\": \"2021-12-30T06:08:18.652Z\",\n        \"updatedAt\": \"2021-12-30T06:08:18.652Z\"\n    },\n    {\n        \"id\": 27,\n        \"node_mac_id\": \"1co0n921t9663b567a94da194a4ae1e5\",\n        \"hub_mac_id\": \"7ed0h921u9663b567a94da194a4ae1e5\",\n        \"ble_rssi_val\": -60,\n        \"Vacancy_in_gms\": 103,\n        \"Vacancy_in_per\": 23,\n        \"date_time\": \"2021-12-30T06:08:37.000Z\",\n        \"createdAt\": \"2021-12-30T06:08:37.483Z\",\n        \"updatedAt\": \"2021-12-30T06:08:37.483Z\"\n    },\n    {\n        \"id\": 29,\n        \"node_mac_id\": \"1co0n921t9663b567a94da194a4ae1e5\",\n        \"hub_mac_id\": \"7ed0h921u9663b567a94da194a4ae1e5\",\n        \"ble_rssi_val\": -54,\n        \"Vacancy_in_gms\": 103,\n        \"Vacancy_in_per\": 23,\n        \"date_time\": \"2021-12-30T06:08:48.000Z\",\n        \"createdAt\": \"2021-12-30T06:08:48.653Z\",\n        \"updatedAt\": \"2021-12-30T06:08:48.653Z\"\n    },\n    {\n        \"id\": 31,\n        \"node_mac_id\": \"1co0n921t9663b567a94da194a4ae1e5\",\n        \"hub_mac_id\": \"7ed0h921u9663b567a94da194a4ae1e5\",\n        \"ble_rssi_val\": -63,\n        \"Vacancy_in_gms\": 103,\n        \"Vacancy_in_per\": 23,\n        \"date_time\": \"2021-12-30T06:09:07.000Z\",\n        \"createdAt\": \"2021-12-30T06:09:07.489Z\",\n        \"updatedAt\": \"2021-12-30T06:09:07.489Z\"\n    }\n]"
+				}
+			]
+		}
+	]
+}
